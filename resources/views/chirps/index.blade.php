@@ -22,7 +22,7 @@
     </div>
   </section>
   <x-modal :id="'new-chirp-modal'" :title="'New Chirp'">
-    <livewire:create-chirp>
-    </livewire:create-chirp>
+    <livewire:chirps.create>
+    </livewire:chirps.create>
   </x-modal>
 </x-app-layout>

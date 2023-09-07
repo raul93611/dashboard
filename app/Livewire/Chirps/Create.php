@@ -1,17 +1,16 @@
 <?php
 
-namespace App\Livewire;
+namespace App\Livewire\Chirps;
 
 use Livewire\Component;
 use Livewire\Attributes\Rule;
-use Illuminate\Support\Facades\Auth;
 
-class CreateChirp extends Component {
+class Create extends Component {
   #[Rule('required|string|max:255')]
   public $message = '';
 
   public function render() {
-    return view('livewire.create-chirp');
+    return view('livewire.chirps.create');
   }
 
   public function store() {
