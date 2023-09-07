@@ -17,8 +17,8 @@
           </button>
         </div>
       </div>
-      <livewire:chirp-list>
-      </livewire:chirp-list>
+      <livewire:chirps.index>
+      </livewire:chirps.index>
     </div>
   </section>
   <x-modal :id="'new-chirp-modal'" :title="'New Chirp'">
