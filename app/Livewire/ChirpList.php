@@ -5,13 +5,16 @@ namespace App\Livewire;
 use Livewire\Component;
 use App\Models\Chirp;
 use Livewire\Attributes\On;
+use Livewire\WithPagination;
 
 class ChirpList extends Component {
-  public $chirps;
+  use WithPagination;
 
   #[On('newChirpFormSubmitted')] 
   public function render() {
-    $this->chirps = Chirp::with('user')->latest()->get();
-    return view('livewire.chirp-list');
+    $chirps = Chirp::with('user')->latest()->paginate(2);
+    return view('livewire.chirp-list', [
+      'chirps' => $chirps
+    ]);
   }
 }

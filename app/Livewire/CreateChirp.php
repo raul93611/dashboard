@@ -16,7 +16,7 @@ class CreateChirp extends Component {
 
   public function store() {
     $validated = $this->validate();
-    Auth::user()->chirps()->create($validated);
+    auth()->user()->chirps()->create($validated);
     $this->reset();
 
     $this->dispatch('newChirpFormSubmitted');

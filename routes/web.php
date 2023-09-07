@@ -22,6 +22,6 @@ Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
-Route::resource('chirps', ChirpController::class)
-  ->only(['index', 'store'])
-  ->middleware(['auth', 'verified']);
+Route::get('/chirps', [ChirpController::class, 'index'])
+  ->middleware(['auth', 'verified'])
+  ->name('chirps.index');
