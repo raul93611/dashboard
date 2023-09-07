@@ -14,7 +14,7 @@
           <x-slot:title>
             Chirps
           </x-slot:title>
-            <x-sidebar.nav-link href="{{route('home')}}">
+            <x-sidebar.nav-link :href="route('chirps.index')" class="{{request()->is('chirps') ? 'active' : ''}}">
               <x-slot:icon>
                 <i class="far fa-circle nav-icon"></i>
               </x-slot:icon>
