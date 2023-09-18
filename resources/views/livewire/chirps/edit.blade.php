@@ -1,6 +1,6 @@
 <div>
   <div class="modal-body">
-    <form id="new-chirp-form" method="POST" wire:submit="store">
+    <form id="edit-chirp-form" method="POST" wire:submit="update">
       @csrf
       <textarea name="message" rows="3" wire:model="message" placeholder="{{ __('What\'s on your mind?') }}"
         class="form-control"></textarea>
@@ -12,6 +12,6 @@
     </form>
   </div>
   <div class="modal-footer">
-    <button type="submit" form="new-chirp-form" class="btn btn-primary">Save</button>
+    <button type="submit" form="edit-chirp-form" class="btn btn-primary">Save</button>
   </div>
 </div>

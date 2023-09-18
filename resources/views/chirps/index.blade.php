@@ -25,4 +25,8 @@
     <livewire:chirps.create>
     </livewire:chirps.create>
   </x-modal>
+  <x-modal :id="'edit-chirp-modal'" :title="'Edit Chirp'">
+    <livewire:chirps.edit>
+    </livewire:chirps.edit>
+  </x-modal>
 </x-app-layout>

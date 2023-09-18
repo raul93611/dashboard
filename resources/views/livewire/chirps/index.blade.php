@@ -9,13 +9,23 @@
               <i class="fas fa-user bg-blue"></i>
               <div class="timeline-item">
                 <span class="time"><i class="fas fa-clock"></i>{{$chirp->created_at->format('Y-m-d H:i')}}</span>
-                <h3 class="timeline-header">{{$chirp->user->name}}</h3>
+                <h3 class="timeline-header">
+                  {{$chirp->user->name}}
+                  @unless ($chirp->created_at->eq($chirp->updated_at))
+                  <small> &middot; {{ __('edited') }}</small>
+                  @endunless
+                </h3>
                 <div class="timeline-body">
                   {!! nl2br(e($chirp->message)) !!}
                 </div>
                 <div class="timeline-footer">
-                  <a class="btn btn-primary btn-sm">Edit</a>
+                  @if ($chirp->user->is(auth()->user()))
+                  <button wire:click="loadEditModal({{$chirp->id}})"
+                    class="btn btn-primary btn-sm">
+                    Edit
+                  </button>
                   <a class="btn btn-danger btn-sm">Delete</a>
+                  @endif
                 </div>
               </div>
             </div>
