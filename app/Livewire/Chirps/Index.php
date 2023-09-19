@@ -22,4 +22,10 @@ class Index extends Component {
   public function loadEditModal($id) {
     $this->dispatch('edit-chirp-button', id: $id);
   }
+
+  public function delete(Chirp $chirp) {
+    $this->authorize('delete', $chirp);
+    $chirp->delete();
+    $this->render();
+  }
 }

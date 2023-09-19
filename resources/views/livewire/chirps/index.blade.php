@@ -20,11 +20,12 @@
                 </div>
                 <div class="timeline-footer">
                   @if ($chirp->user->is(auth()->user()))
-                  <button wire:click="loadEditModal({{$chirp->id}})"
-                    class="btn btn-primary btn-sm">
+                  <button wire:click="loadEditModal({{$chirp->id}})" class="btn btn-primary btn-sm">
                     Edit
                   </button>
-                  <a class="btn btn-danger btn-sm">Delete</a>
+                  <button wire:click="delete({{$chirp->id}})" class="btn btn-danger btn-sm">
+                    Delete
+                  </button>
                   @endif
                 </div>
               </div>
